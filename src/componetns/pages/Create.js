@@ -24,7 +24,7 @@ function Create() {
                     component="h2"
                     gutterBottom
                 >
-                    Create a new note
+                   {!noteId ? "Create a new note": "Edit note"} 
                 </Typography>
                 {!noteId ? <CreateForm /> : <EditForm editNote={editNote} />}
                 

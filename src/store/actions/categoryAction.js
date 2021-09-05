@@ -12,3 +12,9 @@ export const filterNote = (filter) => {
     }
 }
 
+export const removeFilter = () => {
+    return {
+        type: 'REMOVE_FILTER',
+    }
+}
+

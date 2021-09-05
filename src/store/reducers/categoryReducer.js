@@ -8,7 +8,12 @@ const categoryReducer = (state = initState, action) => {
                 ...state,
                 filterList: action.payload
             }
-
+        case 'REMOVE_FILTER':
+            console.log('remove filter')
+            return {
+                ...state,
+                filterList: []
+            }
         default: 
             return state;
     }

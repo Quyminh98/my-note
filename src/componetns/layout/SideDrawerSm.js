@@ -11,11 +11,6 @@ const useStyles = makeStyles((theme) => {
         list: {
             display: 'flex'
         }, 
-        text: {
-            [theme.breakpoints.down('xs')]: {
-                display: 'none'
-            }
-        }
         
     }
 })
@@ -27,12 +22,12 @@ function SideDrawerSm() {
     const location = useLocation();
     const menuItems = [
         {
-            text: 'My Notes',
+            text: 'Notes',
             icon: <SubjectOutlined color="secondary" />,
             path: '/'
         },
         {
-            text: 'Create Note',
+            text: 'Create',
             icon: <AddCircleOutlineOutlined color="secondary" />,
             path: '/create'
         }
@@ -48,7 +43,7 @@ function SideDrawerSm() {
                         className={location.pathname === item.path ? classes.active : null}
                         onClick={() => history.push(item.path)}
                     >
-                        <ListItemIcon>{item.icon}</ListItemIcon>
+                        <ListItemIcon className={classes.icon}>{item.icon}</ListItemIcon>
                         <ListItemText className={classes.text} primary={item.text} />
                     </ListItem>
                 ))}

@@ -3,7 +3,7 @@ import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-
+import { removeFilter } from '../../store/actions/categoryAction';
 import { createNote } from '../../store/actions/noteAction';
 
 const useStyles = makeStyles({
@@ -52,6 +52,11 @@ function CreateForm() {
             history.push('/');
         }
     }
+
+    const deleteFilter = () => {
+        const action = removeFilter();
+        dispatch(action)
+    }
     return (
         <form noValidate autoComplete="off" onSubmit={handleSubmit}>
             <TextField 
@@ -95,6 +100,7 @@ function CreateForm() {
                 color="secondary"
                 variant="contained"
                 endIcon={<KeyboardArrowRightIcon/>}
+                onClick={deleteFilter}
             >
                 Create
             </Button>
